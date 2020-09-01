@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <h1>Hi!</h1>
+    <table>
+        <p>Selected database : {{ db_name }}</p>
+        <form class="form-inline" method="POST" action="{{ url_for('final') }}">
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon">Select Table</span>
+                    <select name="table_selected" class="selectpicker form-control">
+                        {% for x in tb_list %}
+                        <option value="{{ x }}" {% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-default">Go</button>
+            </div>
+        </form>
+    </table>
+    </h3>
+
+
+</body>
+
+</html>
